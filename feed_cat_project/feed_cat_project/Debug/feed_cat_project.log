@@ -1,2 +1,2 @@
 ﻿  main.c
-  feed_cat_project.vcxproj -> C:\c work\feed_cat_project\feed_cat_project\Debug\feed_cat_project.exe
+C:\c work\feed_cat_project\feed_cat_project\feed_cat_project\main.c(1,10): fatal error C1083: include ファイルを開けません。'SDL.h':No such file or directory
