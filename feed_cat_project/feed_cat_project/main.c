@@ -1,26 +1,37 @@
+// SDL2와 표준입출력 헤더 포함
 #include <SDL.h>
 #include <stdio.h>
 
-//Screen dimension constants
+// 함수 선언
+int initialize_window();
+
+// 화면 해상도 전역 상수 설정
 const static int SCREEN_WIDTH = 640;
 const static int SCREEN_HEIGHT = 480;
 
-int main(int argc, char* args[])
-{
-	//The window we'll be rendering to
+int main(int argc, char* args[]) {
+
+	initialize_window();
+
+	return 0;
+}
+
+int initialize_window () {
+
+	// 윈도우 선언 및 초기화
 	SDL_Window* window = NULL;
 
-	//The surface contained by the window
+	// 윈도우 표면 선언 및 초기화
 	SDL_Surface* screenSurface = NULL;
 
-	//Initialize SDL
+	// 윈도우 초기화 실패 시 음수 반환
 	if (SDL_Init(SDL_INIT_VIDEO) < 0)
 	{
 		printf("SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
 	}
 	else
 	{
-		//Create window
+		// 윈도우 생성
 		window = SDL_CreateWindow("SDL INIT", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
 		if (window == NULL)
 		{
@@ -28,23 +39,23 @@ int main(int argc, char* args[])
 		}
 		else
 		{
-			//Get window surface
+			// 윈도우 표면 받기
 			screenSurface = SDL_GetWindowSurface(window);
 
-			//Fill the surface white
+			// 표면을 흰색 (R(1), G(1), B(1)) 으로 채우기
 			SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0xFF, 0xFF, 0xFF));
 
-			//Update the surface
+			// 표면 업데이트
 			SDL_UpdateWindowSurface(window);
 
-			//Wait two seconds
+			// 2초 딜레이
 			SDL_Delay(2000);
 		}
 	}
-	//Destroy window
+	// 화면 제거
 	SDL_DestroyWindow(window);
 
-	//Quit SDL subsystems
+	// SDL 종료
 	SDL_Quit();
 
 	return 0;
