@@ -2,21 +2,62 @@
 #include <SDL.h>
 #include <stdio.h>
 
+#pragma comment (lib,"SDL2")
+#pragma comment (lib,"SDL2main")
+
 // 함수 선언
 int initialize_window();
+int image_load();
 
 // 화면 해상도 전역 상수 설정
 const static int SCREEN_WIDTH = 640;
 const static int SCREEN_HEIGHT = 480;
 
+
+// 메인 함수
 int main(int argc, char* args[]) {
 
 	initialize_window();
-
+	image_load();
+	
 	return 0;
 }
 
-int initialize_window () {
+int image_load() {
+	
+	SDL_Surface* image = NULL;
+	SDL_Surface* screenSurface = NULL;
+
+	// SDL 초기화
+	SDL_Init(SDL_INIT_EVERYTHING);
+
+	// 화면 셋업
+	screenSurface = SDL_CreateWindow (
+		"SDL INIT", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 
+		SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN
+	);
+
+	// 이미지 로드
+	image = SDL_LoadBMP("background.bmp");
+
+	// 불러온 이미지를 화면에 뿌림
+	SDL_BlitSurface(image, NULL, screenSurface, NULL);
+
+	// 2초간 정지
+	SDL_Delay(2000);
+
+	// 불러왔던 이미지를 메모리에서 해제
+	SDL_FreeSurface(image);
+
+	// SDL 끝
+	SDL_Quit();
+
+	return 0;
+
+}
+
+// 그 외 함수
+int initialize_window() {
 
 	// 윈도우 선언 및 초기화
 	SDL_Window* window = NULL;
