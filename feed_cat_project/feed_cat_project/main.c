@@ -1,103 +1,112 @@
 // SDL2와 표준입출력 헤더 포함
 #include <SDL.h>
 #include <stdio.h>
+#include <stdbool.h>
 
 #pragma comment (lib,"SDL2")
 #pragma comment (lib,"SDL2main")
 
 // 함수 선언
 int initialize_window();
-int image_load();
+SDL_Texture* loadTexture(const char*);
+void drawTexture(SDL_Renderer*, int, int, SDL_Texture*);
+
 
 // 화면 해상도 전역 상수 설정
-const static int SCREEN_WIDTH = 640;
-const static int SCREEN_HEIGHT = 480;
+const static int SCREEN_WIDTH = 1040;
+const static int SCREEN_HEIGHT = 680;
+
+// 윈도우, 윈도우 표면 선언 및 초기화 전역 변수
+SDL_Window* window = NULL;
+SDL_Renderer* renderer;
+SDL_Surface* screenSurface = NULL;
 
 
 // 메인 함수
 int main(int argc, char* args[]) {
 
 	initialize_window();
-	image_load();
 	
 	return 0;
 }
 
-int image_load() {
-	
-	SDL_Surface* image = NULL;
-	SDL_Surface* screenSurface = NULL;
 
-	// SDL 초기화
-	SDL_Init(SDL_INIT_EVERYTHING);
+// 텍스쳐(이미지)로드
+SDL_Texture* loadTexture(const char* file) {
+	SDL_Surface* surface;
+	SDL_Texture* texture;
 
-	// 화면 셋업
-	screenSurface = SDL_CreateWindow (
-		"SDL INIT", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 
-		SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN
-	);
+	surface = SDL_LoadBMP(file);
+	if (surface == NULL) {
+		printf("%s파일을 읽을 수 없습니다.\n", file);
+		return NULL;
+	}
 
-	// 이미지 로드
-	image = SDL_LoadBMP("background.bmp");
+	texture = SDL_CreateTextureFromSurface(renderer, surface);
+	if (texture == NULL) {
+		printf("텍스쳐를 생성할 수 없습니다.\n");
+	}
 
-	// 불러온 이미지를 화면에 뿌림
-	SDL_BlitSurface(image, NULL, screenSurface, NULL);
+	SDL_FreeSurface(surface);
 
-	// 2초간 정지
-	SDL_Delay(2000);
-
-	// 불러왔던 이미지를 메모리에서 해제
-	SDL_FreeSurface(image);
-
-	// SDL 끝
-	SDL_Quit();
-
-	return 0;
-
+	return texture;
 }
 
-// 그 외 함수
+
+// 텍스쳐(이미지)드로우
+void drawTexture(SDL_Renderer* renderer, int x, int y, SDL_Texture* texture) {
+	SDL_Rect src, dst;
+
+	src.x = src.y = 0;
+	SDL_QueryTexture(texture, NULL, NULL, &src.w, &src.h);
+
+	dst.x = x;
+	dst.y = y;
+	dst.w = src.w;
+	dst.h = src.h;
+
+	SDL_RenderCopy(renderer, texture, &src, &dst);
+}
+
+// 화면 초기화 및 생성
 int initialize_window() {
+	SDL_Init(SDL_INIT_VIDEO);
 
-	// 윈도우 선언 및 초기화
-	SDL_Window* window = NULL;
+	window = SDL_CreateWindow(
+		"feed_cat",
+		SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
+		SCREEN_WIDTH, SCREEN_HEIGHT,
+		0);
 
-	// 윈도우 표면 선언 및 초기화
-	SDL_Surface* screenSurface = NULL;
+	renderer = SDL_CreateRenderer(
+		window,
+		-1,
+		0);
 
-	// 윈도우 초기화 실패 시 음수 반환
-	if (SDL_Init(SDL_INIT_VIDEO) < 0)
-	{
-		printf("SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
-	}
-	else
-	{
-		// 윈도우 생성
-		window = SDL_CreateWindow("SDL INIT", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
-		if (window == NULL)
-		{
-			printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());
+	bool quit = false;
+	SDL_Event event;
+
+	SDL_Texture* texture;
+
+	texture = loadTexture("image\\background.bmp");
+
+	while (!quit) {
+		while (SDL_PollEvent(&event)) {
+			switch (event.type) {
+			case SDL_QUIT:
+				quit = true;
+				break;
+			}
 		}
-		else
 		{
-			// 윈도우 표면 받기
-			screenSurface = SDL_GetWindowSurface(window);
-
-			// 표면을 흰색 (R(1), G(1), B(1)) 으로 채우기
-			SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0xFF, 0xFF, 0xFF));
-
-			// 표면 업데이트
-			SDL_UpdateWindowSurface(window);
-
-			// 2초 딜레이
-			SDL_Delay(2000);
+			drawTexture(renderer, 0, 0, texture);
+			SDL_RenderPresent(renderer);
 		}
+		SDL_Delay(1);
 	}
-	// 화면 제거
-	SDL_DestroyWindow(window);
 
-	// SDL 종료
+	SDL_DestroyTexture(texture);
+
 	SDL_Quit();
-
 	return 0;
 }

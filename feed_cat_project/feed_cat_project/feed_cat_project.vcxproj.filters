@@ -19,9 +19,4 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\..\..\..\Users\User\Downloads\background.bmp">
-      <Filter>ソース ファイル</Filter>
-    </Image>
-  </ItemGroup>
 </Project>
