@@ -11,12 +11,14 @@ int initialize_window();
 SDL_Texture* load_Texture(const char*);
 void draw_Texture(SDL_Renderer*, int, int, SDL_Texture*);
 
+// 외부 함수 호출
+extern int game_start_window();
 
 // 화면 해상도 전역 상수 설정
 const static int SCREEN_WIDTH = 1040;
 const static int SCREEN_HEIGHT = 680;
 
-// 윈도우, 윈도우 표면 선언 및 초기화 전역 변수
+// 윈도우, 윈도우 표면 선언 및 초기화 변수
 SDL_Window* window = NULL;
 SDL_Renderer* renderer;
 SDL_Surface* screenSurface = NULL;
@@ -38,13 +40,13 @@ SDL_Texture* load_Texture(const char* file) {
 
 	surface = SDL_LoadBMP(file);
 	if (surface == NULL) {
-		printf("%s파일을 읽을 수 없습니다.\n", file);
+		printf("%s파일을 불러들이는 데에 실패했습니다.\n", file);
 		return NULL;
 	}
 
 	texture = SDL_CreateTextureFromSurface(renderer, surface);
 	if (texture == NULL) {
-		printf("텍스쳐를 생성할 수 없습니다.\n");
+		printf("이미지 생성이 불가능합니다.\n");
 	}
 
 	SDL_FreeSurface(surface);
@@ -71,9 +73,10 @@ void draw_Texture(SDL_Renderer* renderer, int x, int y, SDL_Texture* texture) {
 // 화면 초기화 및 생성
 int initialize_window() {
 	SDL_Init(SDL_INIT_VIDEO);
+	TTF_Init();
 
 	window = SDL_CreateWindow(
-		"feed_cat",
+		"feed cat",
 		SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
 		SCREEN_WIDTH, SCREEN_HEIGHT,
 		0);
@@ -108,5 +111,6 @@ int initialize_window() {
 	SDL_DestroyTexture(texture);
 
 	SDL_Quit();
+	TTF_Quit();
 	return 0;
 }
