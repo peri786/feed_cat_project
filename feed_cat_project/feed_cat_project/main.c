@@ -8,8 +8,8 @@
 
 // 함수 선언
 int initialize_window();
-SDL_Texture* loadTexture(const char*);
-void drawTexture(SDL_Renderer*, int, int, SDL_Texture*);
+SDL_Texture* load_Texture(const char*);
+void draw_Texture(SDL_Renderer*, int, int, SDL_Texture*);
 
 
 // 화면 해상도 전역 상수 설정
@@ -32,7 +32,7 @@ int main(int argc, char* args[]) {
 
 
 // 텍스쳐(이미지)로드
-SDL_Texture* loadTexture(const char* file) {
+SDL_Texture* load_Texture(const char* file) {
 	SDL_Surface* surface;
 	SDL_Texture* texture;
 
@@ -54,7 +54,7 @@ SDL_Texture* loadTexture(const char* file) {
 
 
 // 텍스쳐(이미지)드로우
-void drawTexture(SDL_Renderer* renderer, int x, int y, SDL_Texture* texture) {
+void draw_Texture(SDL_Renderer* renderer, int x, int y, SDL_Texture* texture) {
 	SDL_Rect src, dst;
 
 	src.x = src.y = 0;
@@ -88,7 +88,7 @@ int initialize_window() {
 
 	SDL_Texture* texture;
 
-	texture = loadTexture("image\\background.bmp");
+	texture = load_Texture("image\\background.bmp");
 
 	while (!quit) {
 		while (SDL_PollEvent(&event)) {
@@ -99,7 +99,7 @@ int initialize_window() {
 			}
 		}
 		{
-			drawTexture(renderer, 0, 0, texture);
+			draw_Texture(renderer, 0, 0, texture);
 			SDL_RenderPresent(renderer);
 		}
 		SDL_Delay(1);
