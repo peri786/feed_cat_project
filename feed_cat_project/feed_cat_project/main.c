@@ -11,8 +11,11 @@ int initialize_window();
 SDL_Texture* load_Texture(const char*);
 void draw_Texture(SDL_Renderer*, int, int, SDL_Texture*);
 
-// 외부 함수 호출
+// 외부 함수, 변수 호출
 extern int game_start_window();
+extern void DrawSurface(SDL_Surface* dst, int x, int y, SDL_Surface* src);
+extern void DrawSprite(SDL_Surface* screen, int x, int y, SDL_Surface* surface, int w, int h, int step);
+extern SDL_Surface* text;
 
 // 화면 해상도 전역 상수 설정
 const static int SCREEN_WIDTH = 1040;
@@ -73,7 +76,7 @@ void draw_Texture(SDL_Renderer* renderer, int x, int y, SDL_Texture* texture) {
 // 화면 초기화 및 생성
 int initialize_window() {
 	SDL_Init(SDL_INIT_VIDEO);
-	TTF_Init();
+	int TTF_Init();
 
 	window = SDL_CreateWindow(
 		"feed cat",
@@ -81,10 +84,8 @@ int initialize_window() {
 		SCREEN_WIDTH, SCREEN_HEIGHT,
 		0);
 
-	renderer = SDL_CreateRenderer(
-		window,
-		-1,
-		0);
+	renderer = SDL_CreateRenderer(window,-1,0, text);
+	game_start_window();
 
 	bool quit = false;
 	SDL_Event event;
@@ -103,6 +104,13 @@ int initialize_window() {
 		}
 		{
 			draw_Texture(renderer, 0, 0, texture);
+			void DrawSurface(
+				SDL_Surface * dst, int x, int y, SDL_Surface * src
+			);
+			void DrawSprite(SDL_Surface * screen,
+				int x, int y, SDL_Surface * surface,
+				int w, int h, int step
+			);
 			SDL_RenderPresent(renderer);
 		}
 		SDL_Delay(1);

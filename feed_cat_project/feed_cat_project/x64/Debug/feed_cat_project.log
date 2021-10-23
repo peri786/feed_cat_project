@@ -1,5 +1,7 @@
 ﻿  font_print_out.c
 C:\c work\feed_cat_project\feed_cat_project\libs\SDL2-2.0.16\include\han2unicode.h(1142,46): warning C4244: 'return': 'long' から 'unsigned short' への変換です。データが失われる可能性があります。
-C:\c work\feed_cat_project\feed_cat_project\feed_cat_project\font_print_out.c(25,10): warning C4013: 関数 'SDL_Flip' は定義されていません。int 型の値を返す外部関数と見なします。
-C:\c work\feed_cat_project\feed_cat_project\feed_cat_project\font_print_out.c(40): warning C4716: 'game_start_window': 値を返さなければいけません
-LINK : fatal error LNK1104: ファイル 'SDL_ttf.lib' を開くことができません。
+  main.c
+C:\c work\feed_cat_project\feed_cat_project\feed_cat_project\main.c(87,45): warning C4020: 'SDL_CreateRenderer': 実引数が多すぎます。
+C:\c work\feed_cat_project\feed_cat_project\feed_cat_project\main.c(122,10): warning C4013: 関数 'TTF_Quit' は定義されていません。int 型の値を返す外部関数と見なします。
+  コードを生成中...
+  feed_cat_project.vcxproj -> C:\c work\feed_cat_project\feed_cat_project\x64\Debug\feed_cat_project.exe
