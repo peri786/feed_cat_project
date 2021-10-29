@@ -1,7 +1,5 @@
 ﻿  font_print_out.c
-C:\c work\feed_cat_project\feed_cat_project\libs\SDL2-2.0.16\include\han2unicode.h(1142,46): warning C4244: 'return': 'long' から 'unsigned short' への変換です。データが失われる可能性があります。
+C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\feed_cat_project\font_print_out.c(1,10): fatal error C1083: include ファイルを開けません。'SDL.h':No such file or directory
   main.c
-C:\c work\feed_cat_project\feed_cat_project\feed_cat_project\main.c(87,45): warning C4020: 'SDL_CreateRenderer': 実引数が多すぎます。
-C:\c work\feed_cat_project\feed_cat_project\feed_cat_project\main.c(122,10): warning C4013: 関数 'TTF_Quit' は定義されていません。int 型の値を返す外部関数と見なします。
+C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\feed_cat_project\main.c(2,10): fatal error C1083: include ファイルを開けません。'SDL.h':No such file or directory
   コードを生成中...
-  feed_cat_project.vcxproj -> C:\c work\feed_cat_project\feed_cat_project\x64\Debug\feed_cat_project.exe
