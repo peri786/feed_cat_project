@@ -1,6 +1,8 @@
+ï»¿#include "main.h"
 #include "feed_cat_game.h"
+#include "util.h"
 
-// °ÔÀÓ Á¦¸ñ Ãâ·Â
+// ê²Œì„ ì œëª© ì¶œë ¥
 void title() {
 
 	printf("\n\n\n\n\n");
@@ -16,9 +18,15 @@ void title() {
 	printf("                                                  |  |        /  A A  A     |  |        |  | |  |   \n");
 	printf("                                                  |  `----.  /  _____  A    |  |        |__| |__|   \n");
 	printf("                                                   A______| /__/     A__A   |__|        (__) (__)   \n");
+
 }
 
-// ¹æÇâÅ°¸¦ ¹ŞÀ½
+// ì‹œì‘í™”ë©´ ë°°ê²½ìŒì•…
+void title_music() {
+	PlaySound(TEXT("title_BGM.wav"), NULL, SND_ASYNC | SND_LOOP);
+}
+
+// ë°©í–¥í‚¤ë¥¼ ë°›ìŒ
 int key_control() {
 
 	char key;
@@ -46,7 +54,7 @@ int key_control() {
 				return ENTER;
 
 			else {
-				rewind(stdin);  // ¹æÇâÅ°¿Í ¿£ÅÍ°¡ ¾Æ´Ï¸é ÀÔ·Â¹öÆÛ¸¦ Áö¿ò
+				rewind(stdin);  // ë°©í–¥í‚¤ì™€ ì—”í„°ê°€ ì•„ë‹ˆë©´ ì…ë ¥ë²„í¼ë¥¼ ì§€ì›€
 				return 0;
 			}
 		}
@@ -54,18 +62,18 @@ int key_control() {
 
 }
 
-// ¸Ş´º Ãâ·Â
+// ë©”ë‰´ ì¶œë ¥
 int menu() {
 
 	int x = 48;
 	int y = 22;
 
 	cursor_coordinate(x - 2, y);
-	printf("¢º °Ô ÀÓ ½Ã ÀÛ");
+	printf("â–¶ ê²Œ ì„ ì‹œ ì‘");
 	cursor_coordinate(x, y + 2);
-	printf(" Ä³¸¯ÅÍ »óÅÂ ");
+	printf(" ìºë¦­í„° ì •ë³´ ");
 	cursor_coordinate(x, y + 4);
-	printf("    Á¾ ·á    ");
+	printf("    ì¢… ë£Œ    ");
 	printf("\n");
 
 	while (true) {
@@ -77,7 +85,7 @@ int menu() {
 				cursor_coordinate(x - 2, y);
 				printf("  ");
 				cursor_coordinate(x - 2, --y);
-				printf("¢º");
+				printf("â–¶");
 			}
 			break;
 		}
@@ -86,11 +94,66 @@ int menu() {
 				cursor_coordinate(x - 2, y);
 				printf("  ");
 				cursor_coordinate(x - 2, ++y);
-				printf("¢º");
+				printf("â–¶");
 			}
 			break;
+		}
+		case ENTER: {
+			return y - 22;
 		}
 		}
 	}
 
+}
+
+void char_status() {
+	system("cls");
+	printf("\n\n\n\n");
+
+	char_print();
+
+	while (true) {
+		if (key_control() == ENTER)
+			break;
+	}
+}
+
+// ìºë¦­í„° ì…ì¶œë ¥
+void char_print() {
+
+	setlocale(LC_ALL, "");
+	
+
+	printf("      @@@@@@@@@@@@@@:@@@@@@@@@#*@@@@@@@@@@@@@@\n");
+	printf("      @@@@@@@@@@@@@@ #@@@@@@@= *@@@@@@@@@@@@@@\n");
+	printf("      @@@@@@@@@@@@@@  @@@@@@@; !@@@@@@@@@@@@@@\n");
+	printf("      @@@@@@@@@@@@@@*!:~    ,~:=@@@@@@@@@@@@@@\n");
+	printf("      @@@@@@@@@@@@@$            :@@@@@@@@@@@@@\n");
+	printf("      @@@@@@@@@@@@,              .;@@@@@@@@@@@\n");
+	printf("      @@@@@@@@@@@-   ~     .~      *@@@@@@@@@@\n");
+	printf("      @@@@@@@@@@.   ~@;    ~@       !@@@@@@@@@\n");
+	printf("      @@@@@@@@;:    ,;     ,;     -;;!@@@@@@@@\n");
+	printf("      @@@@@@@=#        @ @,           ,@@@@@@@\n");
+	printf("      @@@@@@@@:     ,; *$;             ;@@@@@@\n");
+	printf("      @@@@@@@@.     ~~,~@. :            *@@@@@\n");
+	printf("      @@@@@@@@.      ,@,~#$#             @@@@@\n");
+	printf("      @@@@@@@@.       ;  ,=       -@,    -@@@@\n");
+	printf("      @@#@@@@@.       ;# @,         #$    @@@@\n");
+	printf("      @*  !!@@.        ;==           $,    $@@\n");
+	printf("      @.    $@@                      ,@@@;  @@\n");
+	printf("      @:   !=!@~                     #@$    @@\n");
+	printf("      @@   #$ =*                    !@@*   !@@\n");
+	printf("      @@  ;;,  ;$                   #@@    $@@\n");
+	printf("      @@--=     $*                ~@@@*   :@@@\n");
+	printf("      @@@@@@-  .@@@,             $@@@     @@@@\n");
+	printf("      @@@@@@@@!=@@@!=;        ,!@::@@#    @@@@\n");
+	printf("      @@@@@@@@@@@@@-~!@@#**$@@@@@~:@@#..  @@@@\n");
+	printf("      @@@@@@@@@@@@@=$@@@@@@@@#@@@@=@@@@#*$@@@@\n");
+	printf("      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n");
+							 
+
+}
+
+void select_map() {
+	system("cls");
 }

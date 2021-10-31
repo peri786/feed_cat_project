@@ -149,7 +149,11 @@
   <ItemGroup>
     <ClInclude Include="feed_cat_game.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="util.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="feed_cat_project.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

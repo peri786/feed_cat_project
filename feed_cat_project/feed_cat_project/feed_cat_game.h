@@ -7,7 +7,13 @@
 #define RIGHT 77
 #define ENTER 13
 
+
 // 함수 선언
 int key_control();
 void title();
 int menu();
+void char_status();
+void char_print();
+void select_map();
+void title_music();
+

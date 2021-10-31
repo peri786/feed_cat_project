@@ -1,9 +1,5 @@
 ﻿  feed_cat_game.c
-C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\feed_cat_project\feed_cat_game.c(63,19): warning C4013: 関数 'cursor_coordinate' は定義されていません。int 型の値を返す外部関数と見なします。
-  main.c
-C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\feed_cat_project\main.c(7,12): warning C4013: 関数 'initiolize' は定義されていません。int 型の値を返す外部関数と見なします。
-C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\feed_cat_project\main.c(8,7): warning C4013: 関数 'title' は定義されていません。int 型の値を返す外部関数と見なします。
-C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\feed_cat_project\main.c(9,6): warning C4013: 関数 'menu' は定義されていません。int 型の値を返す外部関数と見なします。
-  util.c
-  コードを生成中...
+C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\feed_cat_project\main.h(36,34): warning C4081: 'newline' が必要です ; ';' が見つかりました。
+C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\feed_cat_project\main.h(36,34): warning C4081: 'newline' が必要です ; ';' が見つかりました。
+C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\feed_cat_project\main.h(36,34): warning C4081: 'newline' が必要です ; ';' が見つかりました。
   feed_cat_project.vcxproj -> C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\x64\Debug\feed_cat_project.exe
