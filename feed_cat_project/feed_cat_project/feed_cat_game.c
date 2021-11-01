@@ -103,10 +103,10 @@ int menu() {
 		}
 		}
 	}
-
 }
 
 void char_status() {
+
 	system("cls");
 	printf("\n\n\n\n");
 
@@ -120,9 +120,6 @@ void char_status() {
 
 // 캐릭터 입출력
 void char_print() {
-
-	setlocale(LC_ALL, "");
-	
 
 	printf("      @@@@@@@@@@@@@@:@@@@@@@@@#*@@@@@@@@@@@@@@\n");
 	printf("      @@@@@@@@@@@@@@ #@@@@@@@= *@@@@@@@@@@@@@@\n");
@@ -155,5 +152,18 @@ void char_print() {
 }
 
 void select_map() {
+
 	system("cls");
+	printf("\n\n\n\n");
+
+	int x = 48;
+	int y = 15;
+
+	cursor_coordinate(x , y);
+	printf("■■■■■■■■■■■■■■■■");
+
+	while (true) {
+		if (key_control() == ENTER)
+			break;
+	}
 }

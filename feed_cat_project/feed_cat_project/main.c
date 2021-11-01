@@ -12,7 +12,7 @@ int main() {
 		title_music();
 		int menu_return = menu();
 		if (menu_return == 0) {
-			//todo game start
+			select_map();
 		}
 		else if (menu_return == 2) {
 			char_status();
