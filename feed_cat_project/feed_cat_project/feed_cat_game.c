@@ -154,16 +154,41 @@ void char_print() {
 void select_map() {
 
 	system("cls");
-	printf("\n\n\n\n");
-
-	int x = 48;
-	int y = 15;
-
-	cursor_coordinate(x , y);
-	printf("■■■■■■■■■■■■■■■■");
+	printf(" __                _   _         \n");
+	printf("/ _| _ || _  _||  |  V  | _   _  \n");
+	printf("V_V /oA||/oA//| ] |  V  |/oA /oA \n");
+	printf("|__/VD L|VD VDL|  |_| |_|V_,]|_/ \n");
+	printf("                             L|  \n");
+	
+	map_1();
 
 	while (true) {
 		if (key_control() == ENTER)
 			break;
 	}
+}
+
+void map_1() {
+
+	printf("\n\n\n\n");
+	printf("			       ~    -       \n");
+	printf("			   ~        ,     \n");
+	printf("			             -    \n");
+	printf("			 ,                \n");
+	printf("			 -             ,   \n");
+	printf("			               ,   \n");
+	printf("			  .  -      ;@; --  \n");
+	printf("			 . @@@@    @@@@ ~  \n");
+	printf("			   @@@@@   $@@@@=~  \n");
+	printf("			 ,@@@@@   #@@@@ ~  \n");
+	printf("			  ,@@@@, @@ @@@@ -  \n");
+	printf("			 :-@@  .@@   ;* -  \n");
+	printf("			      , @@@! ,   .  \n");
+	printf("			        @@@@        \n");
+	printf("			    -    @#,   -    \n");
+	printf("			    ,            \n");
+	printf("			    -        ~     \n");
+	printf("			     .. ,    ,,     \n");
+	printf("			      :-   ,.      \n");
+
 }
