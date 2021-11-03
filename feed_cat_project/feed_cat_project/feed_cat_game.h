@@ -1,6 +1,6 @@
 #include "main.h"
 #include "util.h"
-#include "ingame.h"
+#include "main.h"
 
 // 방향키와 엔터 아스키코드 값 정의
 #define UP 72

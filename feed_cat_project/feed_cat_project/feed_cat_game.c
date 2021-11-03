@@ -110,14 +110,16 @@ void char_status() {
 
 	system("cls");
 
-	char_print();
-
-	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-
 	while (true) {
+
+		char_print();
+
 		if (key_control() == ENTER)
 			break;
 	}
+
+	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+
 }
 
 // 캐릭터 입출력
@@ -125,7 +127,7 @@ void char_print() {
 	
 	while (true) {
 
-		Sleep(100);
+		Sleep(120);
 
 		printf("											  \n");
 		printf("      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n");
@@ -159,7 +161,7 @@ void char_print() {
 		printf("											  \n");
 		printf("											  \n");
 
-		Sleep(200);
+		Sleep(120);
 		
 
 		printf("											  \n");
@@ -194,8 +196,8 @@ void char_print() {
 		printf("											  \n");
 		printf("											  \n");
 
-		Sleep(200);
-		
+		Sleep(120);
+
 	}
 							
 }
@@ -212,16 +214,15 @@ void select_map() {
 	
 	map_1();
 
-	while (true) {
-		if (key_control() == ENTER)
-			break;
-	}
 }
 
 // 첫번째 맵 선택 화면
 void map_1() {
 
 	PlaySound(TEXT("map_1.wav"), NULL, SND_ASYNC | SND_LOOP);
+
+	int x = 55;
+	int y = 13;
 
 	printf("\n\n\n\n");
 	printf("			       ~    -       \n"); Sleep(100);
@@ -244,9 +245,6 @@ void map_1() {
 	printf("			     .. ,    ,,     \n"); Sleep(100);
 	printf("			      :-   ,.      \n"); Sleep(100);
 
-	int x = 55;
-	int y = 13;
-
 	cursor_coordinate(x, y);
 	printf("난이도 : ★★★★★★★★★★★"); Sleep(100);
 	cursor_coordinate(x, y + 2);
@@ -258,11 +256,6 @@ void map_1() {
 	printf(" NEXT ");  Sleep(100);
 
 	map_select_cursor();
-
-	while (true) {
-		if (key_control() == ENTER)
-			map_1_ingame();
-	}
 
 }
 
@@ -297,7 +290,7 @@ void map_select_cursor() {
 			break;
 		}
 		case ENTER: {
-			return y - 13;
+			map_1_ingame();
 		}
 		}
 	}
