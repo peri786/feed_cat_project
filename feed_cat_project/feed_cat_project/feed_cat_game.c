@@ -1,6 +1,4 @@
-﻿#include "main.h"
-#include "feed_cat_game.h"
-#include "util.h"
+﻿#include "feed_cat_game.h"
 
 // 게임 제목 출력
 void title() {
@@ -111,9 +109,10 @@ int menu() {
 void char_status() {
 
 	system("cls");
-	printf("\n\n\n\n");
 
 	char_print();
+
+	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
 	while (true) {
 		if (key_control() == ENTER)
@@ -125,6 +124,11 @@ void char_status() {
 void char_print() {
 	
 	while (true) {
+
+		Sleep(100);
+
+		printf("											  \n");
+		printf("      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n");
 		printf("      @@@@@@@@@@@@@@:@@@@@@@@@#*@@@@@@@@@@@@@@\n");
 		printf("      @@@@@@@@@@@@@@ #@@@@@@@= *@@@@@@@@@@@@@@\n");
 		printf("      @@@@@@@@@@@@@@  @@@@@@@; !@@@@@@@@@@@@@@\n");
@@ -151,9 +155,15 @@ void char_print() {
 		printf("      @@@@@@@@@@@@@-~!@@#**$@@@@@~:@@#..  @@@@\n");
 		printf("      @@@@@@@@@@@@@=$@@@@@@@@#@@@@=@@@@#*$@@@@\n");
 		printf("      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n");
+		printf("											  \n");
+		printf("											  \n");
+		printf("											  \n");
 
-		Sleep(100);
+		Sleep(200);
+		
 
+		printf("											  \n");
+		printf("      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n");
 		printf("      @@@@@@@@@@@@@@:@@@@@@@@@#*@@@@@@@@@@@@@@\n");
 		printf("      @@@@@@@@@@@@@@ #@@@@@@@= *@@@@@@@@@@@@@@\n");
 		printf("      @@@@@@@@@@@@@@  @@@@@@@; !@@@@@@@@@@@@@@\n");
@@ -174,14 +184,18 @@ void char_print() {
 		printf("      @:   !=!@~                     #@$    @@\n");
 		printf("      @@   #$ =*                    !@@*   !@@\n");
 		printf("      @@* ;;,  ;$                   #@@    $@@\n");
-		printf("      @@@@@@@##@@$*                ~@@@*   :@@@\n");
+		printf("      @@@@@@@##@@$*                ~@@@*  :@@@\n");
 		printf("      @@@@@@@@@@@@@,             $@@@     @@@@\n");
 		printf("      @@@@@@@@@@@@@!=;        ,!@::@@#    @@@@\n");
 		printf("      @@@@@@@@@@@@@-~!@@#**$@@@@@@:  @@#..@@@@\n");
 		printf("      @@@@@@@@@@@@@@@=$@@@@@@#@@@@@@@@@#*$@@@@\n");
 		printf("      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n");
+		printf("											  \n");
+		printf("											  \n");
+		printf("											  \n");
 
-		Sleep(100);
+		Sleep(200);
+		
 	}
 							
 }
@@ -206,6 +220,8 @@ void select_map() {
 
 // 첫번째 맵 선택 화면
 void map_1() {
+
+	PlaySound(TEXT("map_1.wav"), NULL, SND_ASYNC | SND_LOOP);
 
 	printf("\n\n\n\n");
 	printf("			       ~    -       \n"); Sleep(100);
@@ -242,6 +258,11 @@ void map_1() {
 	printf(" NEXT ");  Sleep(100);
 
 	map_select_cursor();
+
+	while (true) {
+		if (key_control() == ENTER)
+			map_1_ingame();
+	}
 
 }
 
