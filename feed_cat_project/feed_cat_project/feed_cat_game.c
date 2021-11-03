@@ -6,18 +6,18 @@
 void title() {
 
 	printf("\n\n\n\n\n");
-	printf("           _______  _______  _______  _______      \n");
-	printf("          |   ____||   ____||   ____||       A     \n");
-	printf("          |  |__   |  |__   |  |__   |  .--.  |    \n");
-	printf("          |   __|  |   __|  |   __|  |  |  |  |    \n");
-	printf("          |  |     |  |____ |  |____ |  '--'  |    \n");
-	printf("          |__|     |_______||_______||_______/     \n");
-	printf("                                                    ______       ___    .___________.    __   __    \n");
-	printf("                                                   /      |     /   A   |           |   |  | |  |   \n");
-	printf("                                                  |  ,----'    /  ^  A  `---|  |----`   |  | |  |   \n");
-	printf("                                                  |  |        /  A A  A     |  |        |  | |  |   \n");
-	printf("                                                  |  `----.  /  _____  A    |  |        |__| |__|   \n");
-	printf("                                                   A______| /__/     A__A   |__|        (__) (__)   \n");
+	printf("           _______  _______  _______  _______      \n"); Sleep(100);
+	printf("          |   ____||   ____||   ____||       A     \n"); Sleep(100);
+	printf("          |  |__   |  |__   |  |__   |  .--.  |    \n"); Sleep(100);
+	printf("          |   __|  |   __|  |   __|  |  |  |  |    \n"); Sleep(100);
+	printf("          |  |     |  |____ |  |____ |  '--'  |    \n"); Sleep(100);
+	printf("          |__|     |_______||_______||_______/     \n"); Sleep(100);
+	printf("                                                    ______       ___    .___________.    __   __    \n"); Sleep(100);
+	printf("                                                   /      |     /   A   |           |   |  | |  |   \n"); Sleep(100);
+	printf("                                                  |  ,----'    /  ^  A  `---|  |----`   |  | |  |   \n"); Sleep(100);
+	printf("                                                  |  |        /  A A  A     |  |        |  | |  |   \n"); Sleep(100);
+	printf("                                                  |  `----.  /  _____  A    |  |        |__| |__|   \n"); Sleep(100);
+	printf("                                                   A______| /__/     A__A   |__|        (__) (__)   \n"); Sleep(100);
 
 }
 
@@ -69,11 +69,11 @@ int menu() {
 	int y = 22;
 
 	cursor_coordinate(x - 2, y);
-	printf("▶ 게 임 시 작");
+	printf("▶ 게 임 시 작"); Sleep(100);
 	cursor_coordinate(x, y + 2);
-	printf(" 캐릭터 정보 ");
-	cursor_coordinate(x, y + 4);
-	printf("    종 료    ");
+	printf(" 캐릭터 정보 "); Sleep(100);
+	cursor_coordinate(x, y + 4); 
+	printf("    종 료    "); Sleep(100);
 	printf("\n");
 
 	while (true) {
@@ -85,6 +85,7 @@ int menu() {
 				cursor_coordinate(x - 2, y);
 				printf("  ");
 				cursor_coordinate(x - 2, --y);
+				cursor_coordinate(x - 2, --y);
 				printf("▶");
 			}
 			break;
@@ -93,6 +94,7 @@ int menu() {
 			if (y < 26) {
 				cursor_coordinate(x - 2, y);
 				printf("  ");
+				cursor_coordinate(x - 2, ++y);
 				cursor_coordinate(x - 2, ++y);
 				printf("▶");
 			}
@@ -105,6 +107,7 @@ int menu() {
 	}
 }
 
+//캐릭터 정보 화면
 void char_status() {
 
 	system("cls");
@@ -120,45 +123,78 @@ void char_status() {
 
 // 캐릭터 입출력
 void char_print() {
+	
+	while (true) {
+		printf("      @@@@@@@@@@@@@@:@@@@@@@@@#*@@@@@@@@@@@@@@\n");
+		printf("      @@@@@@@@@@@@@@ #@@@@@@@= *@@@@@@@@@@@@@@\n");
+		printf("      @@@@@@@@@@@@@@  @@@@@@@; !@@@@@@@@@@@@@@\n");
+		printf("      @@@@@@@@@@@@@@*!:~    ,~:=@@@@@@@@@@@@@@\n");
+		printf("      @@@@@@@@@@@@@$            :@@@@@@@@@@@@@\n");
+		printf("      @@@@@@@@@@@@,              .;@@@@@@@@@@@\n");
+		printf("      @@@@@@@@@@@-   ~     .~      *@@@@@@@@@@\n");
+		printf("      @@@@@@@@@@.   ~@;    ~@       !@@@@@@@@@\n");
+		printf("      @@@@@@@@;:    ,;     ,;     -;;!@@@@@@@@\n");
+		printf("      @@@@@@@=#        @ @,           ,@@@@@@@\n");
+		printf("      @@@@@@@@:     ,; *$;             ;@@@@@@\n");
+		printf("      @@@@@@@@.     ~~,~@. :            *@@@@@\n");
+		printf("      @@@@@@@@.      ,@,~#$#             @@@@@\n");
+		printf("      @@@@@@@@.       ;  ,=       -@,    -@@@@\n");
+		printf("      @@#@@@@@.       ;# @,         #$    @@@@\n");
+		printf("      @*  !!@@.        ;==           $,    $@@\n");
+		printf("      @.    $@@                      ,@@@;  @@\n");
+		printf("      @:   !=!@~                     #@$    @@\n");
+		printf("      @@   #$ =*                    !@@*   !@@\n");
+		printf("      @@  ;;,  ;$                   #@@    $@@\n");
+		printf("      @@--=     $*                ~@@@*   :@@@\n");
+		printf("      @@@@@@-  .@@@,             $@@@     @@@@\n");
+		printf("      @@@@@@@@!=@@@!=;        ,!@::@@#    @@@@\n");
+		printf("      @@@@@@@@@@@@@-~!@@#**$@@@@@~:@@#..  @@@@\n");
+		printf("      @@@@@@@@@@@@@=$@@@@@@@@#@@@@=@@@@#*$@@@@\n");
+		printf("      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n");
 
-	printf("      @@@@@@@@@@@@@@:@@@@@@@@@#*@@@@@@@@@@@@@@\n");
-	printf("      @@@@@@@@@@@@@@ #@@@@@@@= *@@@@@@@@@@@@@@\n");
-	printf("      @@@@@@@@@@@@@@  @@@@@@@; !@@@@@@@@@@@@@@\n");
-	printf("      @@@@@@@@@@@@@@*!:~    ,~:=@@@@@@@@@@@@@@\n");
-	printf("      @@@@@@@@@@@@@$            :@@@@@@@@@@@@@\n");
-	printf("      @@@@@@@@@@@@,              .;@@@@@@@@@@@\n");
-	printf("      @@@@@@@@@@@-   ~     .~      *@@@@@@@@@@\n");
-	printf("      @@@@@@@@@@.   ~@;    ~@       !@@@@@@@@@\n");
-	printf("      @@@@@@@@;:    ,;     ,;     -;;!@@@@@@@@\n");
-	printf("      @@@@@@@=#        @ @,           ,@@@@@@@\n");
-	printf("      @@@@@@@@:     ,; *$;             ;@@@@@@\n");
-	printf("      @@@@@@@@.     ~~,~@. :            *@@@@@\n");
-	printf("      @@@@@@@@.      ,@,~#$#             @@@@@\n");
-	printf("      @@@@@@@@.       ;  ,=       -@,    -@@@@\n");
-	printf("      @@#@@@@@.       ;# @,         #$    @@@@\n");
-	printf("      @*  !!@@.        ;==           $,    $@@\n");
-	printf("      @.    $@@                      ,@@@;  @@\n");
-	printf("      @:   !=!@~                     #@$    @@\n");
-	printf("      @@   #$ =*                    !@@*   !@@\n");
-	printf("      @@  ;;,  ;$                   #@@    $@@\n");
-	printf("      @@--=     $*                ~@@@*   :@@@\n");
-	printf("      @@@@@@-  .@@@,             $@@@     @@@@\n");
-	printf("      @@@@@@@@!=@@@!=;        ,!@::@@#    @@@@\n");
-	printf("      @@@@@@@@@@@@@-~!@@#**$@@@@@~:@@#..  @@@@\n");
-	printf("      @@@@@@@@@@@@@=$@@@@@@@@#@@@@=@@@@#*$@@@@\n");
-	printf("      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n");
-							 
+		Sleep(100);
 
+		printf("      @@@@@@@@@@@@@@:@@@@@@@@@#*@@@@@@@@@@@@@@\n");
+		printf("      @@@@@@@@@@@@@@ #@@@@@@@= *@@@@@@@@@@@@@@\n");
+		printf("      @@@@@@@@@@@@@@  @@@@@@@; !@@@@@@@@@@@@@@\n");
+		printf("      @@@@@@@@@@@@@@*!:~    ,~:=@@@@@@@@@@@@@@\n");
+		printf("      @@@@@@@@@@@@@$            :@@@@@@@@@@@@@\n");
+		printf("      @@@@@@@@@@@@,              .;@@@@@@@@@@@\n");
+		printf("      @@@@@@@@@@@-   ~     .~      *@@@@@@@@@@\n");
+		printf("      @@@@@@@@@@.   ~@;    ~@       !@@@@@@@@@\n");
+		printf("      @@@@@@@@;:    ,;     ,;     -;;!@@@@@@@@\n");
+		printf("      @@@@@@@=#        @ @,           ,@@@@@@@\n");
+		printf("      @@@@@@@@:     ,; *$;             ;@@@@@@\n");
+		printf("      @@@@@@@@.     ~~,~@. :            *@@@@@\n");
+		printf("      @@   @@@.      ,@,~#$#             @@@@@\n");
+		printf("      @     @@.       ;  ,=       -@,    -@@@@\n");
+		printf("      @@    @@.       ;# @,         #$    @@@@\n");
+		printf("      @*  !!@@.        ;==           $,    $@@\n");
+		printf("      @.    $@@                      ,@@@;  @@\n");
+		printf("      @:   !=!@~                     #@$    @@\n");
+		printf("      @@   #$ =*                    !@@*   !@@\n");
+		printf("      @@* ;;,  ;$                   #@@    $@@\n");
+		printf("      @@@@@@@##@@$*                ~@@@*   :@@@\n");
+		printf("      @@@@@@@@@@@@@,             $@@@     @@@@\n");
+		printf("      @@@@@@@@@@@@@!=;        ,!@::@@#    @@@@\n");
+		printf("      @@@@@@@@@@@@@-~!@@#**$@@@@@@:  @@#..@@@@\n");
+		printf("      @@@@@@@@@@@@@@@=$@@@@@@#@@@@@@@@@#*$@@@@\n");
+		printf("      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n");
+
+		Sleep(100);
+	}
+							
 }
 
+// 맵 선택 화면
 void select_map() {
 
 	system("cls");
-	printf(" __                _   _         \n");
-	printf("/ _| _ || _  _||  |  V  | _   _  \n");
-	printf("V_V /oA||/oA//| ] |  V  |/oA /oA \n");
-	printf("|__/VD L|VD VDL|  |_| |_|V_,]|_/ \n");
-	printf("                             L|  \n");
+	printf(" __                _   _         \n"); Sleep(100);
+	printf("/ _| _ || _  _||  |  V  | _   _  \n"); Sleep(100);
+	printf("V_V /oA||/oA//| ] |  V  |/oA /oA \n"); Sleep(100);
+	printf("|__/VD L|VD VDL|  |_| |_|V_,]|_/ \n"); Sleep(100);
+	printf("                             L|  \n"); Sleep(100);
 	
 	map_1();
 
@@ -168,27 +204,80 @@ void select_map() {
 	}
 }
 
+// 첫번째 맵 선택 화면
 void map_1() {
 
 	printf("\n\n\n\n");
-	printf("			       ~    -       \n");
-	printf("			   ~        ,     \n");
-	printf("			             -    \n");
-	printf("			 ,                \n");
-	printf("			 -             ,   \n");
-	printf("			               ,   \n");
-	printf("			  .  -      ;@; --  \n");
-	printf("			 . @@@@    @@@@ ~  \n");
-	printf("			   @@@@@   $@@@@=~  \n");
-	printf("			 ,@@@@@   #@@@@ ~  \n");
-	printf("			  ,@@@@, @@ @@@@ -  \n");
-	printf("			 :-@@  .@@   ;* -  \n");
-	printf("			      , @@@! ,   .  \n");
-	printf("			        @@@@        \n");
-	printf("			    -    @#,   -    \n");
-	printf("			    ,            \n");
-	printf("			    -        ~     \n");
-	printf("			     .. ,    ,,     \n");
-	printf("			      :-   ,.      \n");
+	printf("			       ~    -       \n"); Sleep(100);
+	printf("			   ~        ,     \n"); Sleep(100);
+	printf("			             -    \n"); Sleep(100);
+	printf("			 ,                \n"); Sleep(100);
+	printf("			 -             ,   \n"); Sleep(100);
+	printf("			               ,   \n"); Sleep(100);
+	printf("			  .  -      ;@; --  \n"); Sleep(100);
+	printf("			 . @@@@    @@@@ ~  \n"); Sleep(100);
+	printf("			   @@@@@   $@@@@=~  \n"); Sleep(100);
+	printf("			 ,@@@@@   #@@@@ ~  \n"); Sleep(100);
+	printf("			  ,@@@@, @@ @@@@ -  \n"); Sleep(100);
+	printf("			 :-@@  .@@   ;* -  \n"); Sleep(100);
+	printf("			      , @@@! ,   .  \n"); Sleep(100);
+	printf("			        @@@@        \n"); Sleep(100);
+	printf("			    -    @#,   -    \n"); Sleep(100);
+	printf("			    ,            \n"); Sleep(100);
+	printf("			    -        ~     \n"); Sleep(100);
+	printf("			     .. ,    ,,     \n"); Sleep(100);
+	printf("			      :-   ,.      \n"); Sleep(100);
 
+	int x = 55;
+	int y = 13;
+
+	cursor_coordinate(x, y);
+	printf("난이도 : ★★★★★★★★★★★"); Sleep(100);
+	cursor_coordinate(x, y + 2);
+	printf("EVERYTHING WILL FREEZE"); Sleep(100);
+
+	cursor_coordinate(x - 2, y + 4);
+	printf("▶ START");  Sleep(100);
+	cursor_coordinate(x, y + 6);
+	printf(" NEXT ");  Sleep(100);
+
+	map_select_cursor();
+
+}
+
+// 이번 맵에서 게임을 할지 다음 맵으로 갈지 선택 커서
+void map_select_cursor() {
+
+	int x = 55;
+	int y = 17;
+
+	while (true) {
+		int key_event = key_control();
+
+		switch (key_event) {
+		case UP: {
+			if (y > 17) {
+				cursor_coordinate(x - 2, y);
+				printf("  ");
+				cursor_coordinate(x - 2, --y);
+				cursor_coordinate(x - 2, --y);
+				printf("▶");
+			}
+			break;
+		}
+		case DOWN: {
+			if (y < 19) {
+				cursor_coordinate(x - 2, y);
+				printf("  ");
+				cursor_coordinate(x - 2, ++y);
+				cursor_coordinate(x - 2, ++y);
+				printf("▶");
+			}
+			break;
+		}
+		case ENTER: {
+			return y - 13;
+		}
+		}
+	}
 }

@@ -2,4 +2,5 @@
 C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\feed_cat_project\main.h(36,34): warning C4081: 'newline' が必要です ; ';' が見つかりました。
 C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\feed_cat_project\main.h(36,34): warning C4081: 'newline' が必要です ; ';' が見つかりました。
 C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\feed_cat_project\main.h(36,34): warning C4081: 'newline' が必要です ; ';' が見つかりました。
+C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\feed_cat_project\feed_cat_game.c(279,17): warning C4098: 'map_select_cursor': 戻り値の型が 'void' で宣言された関数が、値を返しました。
   feed_cat_project.vcxproj -> C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\x64\Debug\feed_cat_project.exe

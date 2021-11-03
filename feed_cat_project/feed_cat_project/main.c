@@ -8,8 +8,8 @@ int main() {
 	initiolize();
 	
 	while (true) {
-		title();
 		title_music();
+		title();
 		int menu_return = menu();
 		if (menu_return == 0) {
 			select_map();
