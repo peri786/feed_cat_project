@@ -18,6 +18,6 @@ void char_status();
 void char_print();
 void select_map();
 void map_1();
-void map_select_cursor();
+int select_map_cursor();
 void title_music();
 

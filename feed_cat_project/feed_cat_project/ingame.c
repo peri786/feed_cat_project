@@ -9,6 +9,10 @@ void map_1_ingame() {
     system("cls");
     board_init();
     display();
+
+    Sleep(3000);
+
+    PlaySound(TEXT("map_1.wav"), NULL, SND_ASYNC | SND_LOOP);
     
 }
 

@@ -2,12 +2,4 @@
 C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\feed_cat_project\main.h(36,34): warning C4081: 'newline' が必要です ; ';' が見つかりました。
 C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\feed_cat_project\main.h(36,34): warning C4081: 'newline' が必要です ; ';' が見つかりました。
 C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\feed_cat_project\main.h(36,34): warning C4081: 'newline' が必要です ; ';' が見つかりました。
-C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\feed_cat_project\feed_cat_game.c(293,16): warning C4013: 関数 'map_1_ingame' は定義されていません。int 型の値を返す外部関数と見なします。
-  main.c
-C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\feed_cat_project\main.h(36,34): warning C4081: 'newline' が必要です ; ';' が見つかりました。
-C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\feed_cat_project\main.h(36,34): warning C4081: 'newline' が必要です ; ';' が見つかりました。
-C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\feed_cat_project\main.h(36,34): warning C4081: 'newline' が必要です ; ';' が見つかりました。
-C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\feed_cat_project\main.h(36,34): warning C4081: 'newline' が必要です ; ';' が見つかりました。
-C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\feed_cat_project\main.h(36,34): warning C4081: 'newline' が必要です ; ';' が見つかりました。
-  コードを生成中...
   feed_cat_project.vcxproj -> C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\x64\Debug\feed_cat_project.exe
