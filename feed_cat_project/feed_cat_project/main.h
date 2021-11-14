@@ -1,3 +1,5 @@
+#pragma comment(lib, "winmm.lib")
+
 #ifndef __STDIO_H__
 #define __STDIO_H__
 #include <stdio.h>
@@ -32,5 +34,3 @@
 #define __LOCALE_H__
 #include <locale.h>
 #endif
-
-#pragma comment(lib, "winmm.lib");

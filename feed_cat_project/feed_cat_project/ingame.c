@@ -1,7 +1,7 @@
 #include "ingame.h"
 
 // 보드 배열
-char board[BOARD_X][BOARD_Y] = { 0 };
+wchar_t board[BOARD_Y][BOARD_X] = { 0 };
 
 // 맵1의 리듬게임 시작
 void map_1_ingame() {
@@ -10,7 +10,11 @@ void map_1_ingame() {
     board_init();
     display();
 
-    Sleep(3000);
+    Sleep(500);
+
+    sndPlaySound(NULL, SND_ASYNC);   // 선택 화면에서의 음악을 멈춘 후 다시 재생
+
+    Sleep(2000);
 
     PlaySound(TEXT("map_1.wav"), NULL, SND_ASYNC | SND_LOOP);
     
@@ -20,21 +24,32 @@ void map_1_ingame() {
 void board_init() {
 
     // 아래 가로
-    for (int i = 0; i < BOARD_X; i++) {
-        board[BOARD_Y - 1][i] = '_';
+    for (int i = 0; i < BOARD_X - 25; i++) {
+        board[BOARD_Y - 1][i] = L'□';
     }
 
     // 공백
     for (int i = 1; i < BOARD_Y - 1; i++) {
         for (int j = 1; j < BOARD_X - 1; j++) {
-            board[i][j] = ' ';
+            if (board[i] == board[BOARD_Y - 5])
+                continue;
+            board[i][j] = L' ';
         }
     }
 
     // 좌우 세로
     for (int i = 0; i < BOARD_Y; i++) {
-        board[i][0] = board[i][BOARD_X - 1] = '|';
+        board[i][0] = board[i][BOARD_X - 1] = L'■';
     }
+
+    // 노트를 입력 받는 칸
+    for (int i = 0; i < BOARD_X - 26; i++) {
+        board[BOARD_Y - 5][i + 1] = L'□';
+    }
+    board[BOARD_Y - 3][7] = L'←';
+    board[BOARD_Y - 3][17] = L'↑';
+    board[BOARD_Y - 3][28] = L'↓';
+    board[BOARD_Y - 3][38] = L'→';
 }
 
 // 노트가 떨어지는 공간을 그림
@@ -42,7 +57,8 @@ void display() {
 
     for (int i = 0; i < BOARD_Y; i++) {
         for (int j = 0; j < BOARD_X; j++) {
-            printf("%c", board[i][j]);
+            setlocale(LC_ALL, "KOREAN");
+            wprintf(L"%c", board[i][j]);
         }
         printf("\n");
     }

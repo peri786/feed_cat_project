@@ -1,8 +1,9 @@
 #include "main.h"
+#include "util.h"
 
 // 보드의 좌표
-#define BOARD_X 60
-#define BOARD_Y 70
+#define BOARD_X 50
+#define BOARD_Y 60
 
 // 함수 선언
 void display();        // 노트가 떨어지는 공간을 그림

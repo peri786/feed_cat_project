@@ -108,16 +108,22 @@ int menu() {
 //캐릭터 정보 화면
 void char_status() {
 
+	bool x = true;
+
 	system("cls");
 
-	while (true) {
-		bool x = false;
+	while (x) {
 
-		if (true)
+		char_print();
+
+		if (x == true) {
 			char_print();
-		else if (key_control() == DOWN)
-			break;
+			int exit = key_control();
+			if (key_control() == ENTER)
+				x = false;
+		}
 
+			
 	}
 
 	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
@@ -250,33 +256,33 @@ void map_1() {
 	int x = 55;
 	int y = 13;
 
-	PlaySound(TEXT("map_1.wav"), NULL, SND_ASYNC | SND_LOOP);
+	PlaySound(TEXT("map_1.wav"), NULL, SND_ASYNC | SND_LOOP | SND_NODEFAULT);
 
 	printf("\n\n\n\n");
-	printf("			       ~    -       \n"); Sleep(100);
-	printf("			   ~        ,     \n"); Sleep(100);
-	printf("			             -    \n"); Sleep(100);
-	printf("			 ,                \n"); Sleep(100);
-	printf("			 -             ,   \n"); Sleep(100);
-	printf("			               ,   \n"); Sleep(100);
-	printf("			  .  -      ;@; --  \n"); Sleep(100);
-	printf("			 . @@@@    @@@@ ~  \n"); Sleep(100);
-	printf("			   @@@@@   $@@@@=~  \n"); Sleep(100);
-	printf("			 ,@@@@@   #@@@@ ~  \n"); Sleep(100);
-	printf("			  ,@@@@, @@ @@@@ -  \n"); Sleep(100);
-	printf("			 :-@@  .@@   ;* -  \n"); Sleep(100);
-	printf("			      , @@@! ,   .  \n"); Sleep(100);
-	printf("			        @@@@        \n"); Sleep(100);
-	printf("			    -    @#,   -    \n"); Sleep(100);
-	printf("			    ,            \n"); Sleep(100);
-	printf("			    -        ~     \n"); Sleep(100);
-	printf("			     .. ,    ,,     \n"); Sleep(100);
-	printf("			      :-   ,.      \n"); Sleep(100);
+	printf("			       ~    -       \n"); Sleep(60);
+	printf("			   ~        ,     \n"); Sleep(60);
+	printf("			             -    \n"); Sleep(60);
+	printf("			 ,                \n"); Sleep(60);
+	printf("			 -             ,   \n"); Sleep(60);
+	printf("			               ,   \n"); Sleep(60);
+	printf("			  .  -      ;@; --  \n"); Sleep(60);
+	printf("			 . @@@@    @@@@ ~  \n"); Sleep(60);
+	printf("			   @@@@@   $@@@@=~  \n"); Sleep(60);
+	printf("			 ,@@@@@   #@@@@ ~  \n"); Sleep(60);
+	printf("			  ,@@@@, @@ @@@@ -  \n"); Sleep(60);
+	printf("			 :-@@  .@@   ;* -  \n"); Sleep(60);
+	printf("			      , @@@! ,   .  \n"); Sleep(60);
+	printf("			        @@@@        \n"); Sleep(60);
+	printf("			    -    @#,   -    \n"); Sleep(60);
+	printf("			    ,            \n"); Sleep(60);
+	printf("			    -        ~     \n"); Sleep(60);
+	printf("			     .. ,    ,,     \n"); Sleep(60);
+	printf("			      :-   ,.      \n"); Sleep(60);
 
 	cursor_coordinate(x, y);
-	printf("난이도 : ★★★★★★★★★★★"); Sleep(100);
+	printf("난이도 : ★★★★★★★★★★★"); Sleep(60);
 	cursor_coordinate(x, y + 2);
-	printf("EVERYTHING WILL FREEZE"); Sleep(100);
+	printf("EVERYTHING WILL FREEZE"); Sleep(60);
 
 }
 
@@ -287,9 +293,9 @@ int select_map_cursor() {
 	int y = 17;
 
 	cursor_coordinate(x - 2, y);
-	printf("▶ START");  Sleep(100);
+	printf("▶ START");  Sleep(50);
 	cursor_coordinate(x, y + 2);
-	printf(" BACK ");  Sleep(100);
+	printf(" BACK ");  Sleep(50);
 
 	while (true) {
 		int key_event = key_control();
