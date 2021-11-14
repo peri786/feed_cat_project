@@ -50,6 +50,8 @@ void board_init() {
     board[BOARD_Y - 3][17] = L'↑';
     board[BOARD_Y - 3][28] = L'↓';
     board[BOARD_Y - 3][38] = L'→';
+    board[BOARD_Y - 3][49] = L' ';
+    board[BOARD_Y - 3][45] = L'■';
 }
 
 // 노트가 떨어지는 공간을 그림
