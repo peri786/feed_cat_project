@@ -1,6 +1,4 @@
-#include "main.h"
 #include "feed_cat_game.h"
-#include "util.h"
 
 // 메인 함수
 int main() {

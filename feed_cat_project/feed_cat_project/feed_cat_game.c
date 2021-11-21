@@ -133,8 +133,7 @@ void char_status() {
 // 캐릭터 입출력
 void char_print() {
 	
-	Sleep(120);
-
+	system("cls");
 	printf("											  \n");
 	printf("      @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n");
 	printf("      @@@@@@@@@@@@@@:@@@@@@@@@#*@@@@@@@@@@@@@@\n");
@@ -168,6 +167,7 @@ void char_print() {
 	printf("											  \n");
 
 	Sleep(120);
+	system("cls");
 	
 	printf("											  \n");
 	printf("											  \n");
@@ -202,6 +202,7 @@ void char_print() {
 	printf("											  \n");
 
 	Sleep(120);
+	system("cls");
 
 	printf("										  \n");
 	printf("  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n");
@@ -236,6 +237,7 @@ void char_print() {
 	printf("										  \n");
 
 	Sleep(120);
+	system("cls");
 }
 
 // 맵 선택 화면

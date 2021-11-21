@@ -1,5 +1,3 @@
-#include "main.h"
-#include "util.h"
 #include "ingame.h"
 
 // 방향키와 엔터 아스키코드 값 정의

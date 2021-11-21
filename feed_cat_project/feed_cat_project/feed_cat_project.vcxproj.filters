@@ -27,6 +27,9 @@
     <ClCompile Include="ingame.c">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="note.c">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -42,6 +45,9 @@
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="ingame.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="note.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
   </ItemGroup>
