@@ -1,10 +1,18 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include "feed_cat_game.h"
+#include<memory.h>
+
+// 스테이지 구성
+typedef enum _STAGE {
+	READY, RUNNING, PAUSE, RESULT
+}STAGE;
+STAGE Stage;
 
 // 메인 함수
 int main() {
-
+	int nKey;
 	initiolize();
-	
+	init();
 	while (true) {
 		title_music();
 		title();
@@ -13,10 +21,44 @@ int main() {
 			select_map();
 			map_1();
 			if (select_map_cursor() == 0) { // START를 누르면 인게임으로 이동
-				map_1_ingame();
-				while (true) {
-					fflush(stdin);  // 엔터 키를 눌렀을 때 게임에서 나가지 않기 위해 예외처리
+				while (1) {
+
+					if (_kbhit()) {
+						nKey = _getch();
+						if (nKey == 13) {
+							Stage = RUNNING; // 엔터 입력 시 running시작 음악 호출
+							PlaySound(TEXT("map_1.wav"), NULL, SND_ASYNC | SND_LOOP);
+						}
+						if (nKey == 'p') {
+							Stage = PAUSE;
+						}
+						switch (nKey) {
+						case 'a':
+							CheckA(0);
+							break;
+						case 's':
+							CheckS(0);
+							break;
+						case 'd':
+							CheckD(0);
+							break;
+						case 'j':
+							CheckJ(0);
+							break;
+						case 'k':
+							CheckK(0);
+							break;
+						case 'l':
+							CheckL(0);
+							break;
+
+						}
+					}
+
+					Update();  // 데이터 갱신
+					Render();  // 화면출력
 				}
+				ScreenRelease();
 			}
 		}
 		else if (menu_return == 2) {
@@ -25,7 +67,6 @@ int main() {
 		else if (menu_return == 4) {
 			return 0;
 		}
-		system("cls");
 	}
 	return 0;
 }

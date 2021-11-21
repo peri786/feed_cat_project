@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include "util.h"
 
 static int g_nScreenIndex;
@@ -5,6 +6,8 @@ static HANDLE g_hScreen[2];
 
 // 초기화
 void initiolize() {
+
+	CONSOLE_CURSOR_INFO cci;
 
 	// 콘솔 창 설정
 	system("mode con cols=110 lines=35 | title FEED CAT");
@@ -20,29 +23,34 @@ void initiolize() {
 	console_cursor.bVisible = 0;
 	console_cursor.dwSize = 1;
 	SetConsoleCursorInfo(console_handle, &console_cursor);
+
+	cci.dwSize = 1;
+	cci.bVisible = FALSE;
+	SetConsoleCursorInfo(g_hScreen[0], &cci);
+	SetConsoleCursorInfo(g_hScreen[1], &cci);
 }
 
-void ScreenFlipping()
-{
+// 활성화된 버퍼와 비활성화된 버퍼의 상태를 바꿈
+void ScreenFlipping() {
 	SetConsoleActiveScreenBuffer(g_hScreen[g_nScreenIndex]);
 	g_nScreenIndex = !g_nScreenIndex;
 }
 
-void ScreenClear()
-{
+// 버퍼 지우기
+void ScreenClear() {
 	COORD Coor = { 0, 0 };
 	DWORD dw;
 	FillConsoleOutputCharacter(g_hScreen[g_nScreenIndex], ' ', 80 * 25, Coor, &dw);
 }
 
-void ScreenRelease()
-{
+// 생성한 두개의 버퍼를  모두 해제
+void ScreenRelease() {
 	CloseHandle(g_hScreen[0]);
 	CloseHandle(g_hScreen[1]);
 }
 
-void ScreenPrint(int x, int y, char* string)
-{
+// 화면 출력
+void ScreenPrint(int x, int y, char* string) {
 	DWORD dw;
 	COORD CursorPosition = { x, y };
 	SetConsoleCursorPosition(g_hScreen[g_nScreenIndex], CursorPosition);
@@ -57,5 +65,6 @@ void cursor_coordinate(int x, int y) {
 	pos.X = x;
 	pos.Y = y;
 	SetConsoleCursorPosition(consoleHandler, pos);
+
 
 }
