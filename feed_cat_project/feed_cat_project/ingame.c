@@ -17,7 +17,7 @@ void map_1_ingame() {
     Sleep(2000);
 
     PlaySound(TEXT("map_1.wav"), NULL, SND_ASYNC | SND_LOOP);
-    
+
 }
 
 // 보드 초기화
@@ -64,5 +64,4 @@ void display() {
         }
         printf("\n");
     }
-
 }

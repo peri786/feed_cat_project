@@ -1,2 +1,3 @@
-﻿  ingame.c
-  feed_cat_project.vcxproj -> C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\x64\Debug\feed_cat_project.exe
+﻿  note.c
+C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\feed_cat_project\note.c(16,23): error C2059: 構文エラー: ';'
+C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\feed_cat_project\note.c(19,1): error C2059: 構文エラー: '}'
