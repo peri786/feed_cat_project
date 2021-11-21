@@ -1,12 +1,2 @@
-﻿  feed_cat_game.c
-  ingame.c
-  main.c
-C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\feed_cat_project\main.c(37,14): warning C4013: 関数 'CheckA' は定義されていません。int 型の値を返す外部関数と見なします。
-C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\feed_cat_project\main.c(40,14): warning C4013: 関数 'CheckS' は定義されていません。int 型の値を返す外部関数と見なします。
-C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\feed_cat_project\main.c(43,14): warning C4013: 関数 'CheckD' は定義されていません。int 型の値を返す外部関数と見なします。
-C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\feed_cat_project\main.c(46,14): warning C4013: 関数 'CheckJ' は定義されていません。int 型の値を返す外部関数と見なします。
-C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\feed_cat_project\main.c(49,14): warning C4013: 関数 'CheckK' は定義されていません。int 型の値を返す外部関数と見なします。
-C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\feed_cat_project\main.c(52,14): warning C4013: 関数 'CheckL' は定義されていません。int 型の値を返す外部関数と見なします。
-  note.c
-  コードを生成中...
+﻿  ingame.c
   feed_cat_project.vcxproj -> C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\x64\Debug\feed_cat_project.exe

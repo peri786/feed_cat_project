@@ -2,7 +2,6 @@
 #include <string.h>
 #include <ctype.h>
 
-#define ALLNOTE 300
+
 
 // 함수 선언
-void ShowNote(int n);
