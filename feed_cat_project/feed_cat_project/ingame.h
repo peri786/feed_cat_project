@@ -7,6 +7,6 @@
 #define BOARD_Y 60
 
 // 함수 선언
-void display();        // 노트가 떨어지는 공간을 그림
-void board_init();     // 보드 초기화
+void map_display();        // 노트가 떨어지는 공간을 그림
 void map_1_ingame();
+void score();         // 맵 옆에 점수나 콤보 표시

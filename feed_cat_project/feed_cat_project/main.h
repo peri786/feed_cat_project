@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #pragma comment(lib, "winmm.lib")
 
 #ifndef __STDIO_H__

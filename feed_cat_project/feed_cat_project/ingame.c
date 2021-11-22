@@ -1,14 +1,20 @@
 #include "ingame.h"
 
-// 보드 배열
-wchar_t Board[BOARD_Y][BOARD_X] = { 0 };
+// 시간 변수
+clock_t current_time;
+
+// 그 외 변수
+int score_a = 0;
+int combo_a = 0;
 
 // 맵1의 리듬게임 시작
 void map_1_ingame() {
 
+    clock_t Curtime = clock();
+
     system("cls");
-    board_init();
-    display();
+    map_display();
+    score();
 
     Sleep(500);
 
@@ -20,48 +26,37 @@ void map_1_ingame() {
 
 }
 
-// 보드 초기화
-void board_init() {
+// 노트가 떨어지는 공간을 그림
+void map_display() {
 
-    // 아래 가로
-    for (int i = 0; i < BOARD_X - 25; i++) {
-        Board[BOARD_Y - 1][i] = L'□';
+    int nNum = 0;
+    cursor_coordinate(0, 0);
+    printf("■■■■■■■■■■■■■■■■■■■■■■■■■");
+    for (int i = 1; i < 33; i++) {
+        cursor_coordinate(0, i);
+        printf("■\t\t\t\t\t\t■");
     }
-
-    // 공백
-    for (int i = 1; i < BOARD_Y - 1; i++) {
-        for (int j = 1; j < BOARD_X - 1; j++) {
-            if (Board[i] == Board[BOARD_Y - 5])
-                continue;
-            Board[i][j] = L' ';
-        }
-    }
-
-    // 좌우 세로
-    for (int i = 0; i < BOARD_Y; i++) {
-        Board[i][0] = Board[i][BOARD_X - 1] = L'■';
-    }
-
-    // 노트를 입력 받는 칸
-    for (int i = 0; i < BOARD_X - 26; i++) {
-        Board[BOARD_Y - 5][i + 1] = L'□';
-    }
-    Board[BOARD_Y - 3][7] = L'←';
-    Board[BOARD_Y - 3][17] = L'↑';
-    Board[BOARD_Y - 3][28] = L'↓';
-    Board[BOARD_Y - 3][38] = L'→';
-    Board[BOARD_Y - 3][49] = L' ';
-    Board[BOARD_Y - 3][45] = L'■';
+    cursor_coordinate(0, 32);
+    printf("■■■■■■■■■■■■■■■■■■■■■■■■■");
+    cursor_coordinate(2, 28);
+    printf("______________________________________________");
 }
 
-// 노트가 떨어지는 공간을 그림
-void display() {
+void score() {
 
-    for (int i = 0; i < BOARD_Y; i++) {
-        for (int j = 0; j < BOARD_X; j++) {
-            setlocale(LC_ALL, "KOREAN");
-            wprintf(L"%c", Board[i][j]);
-        }
-        printf("\n");
-    }
+	// 시간
+	char Time[20];
+	sprintf(Time, "TIME : %d.%dsec", current_time / 1000, current_time % 1000);
+    cursor_coordinate(60, 7);
+    printf("%s", Time);
+	// 점수
+	char Scores[20];
+	sprintf(Scores, "SCORE : %d", score_a);
+    cursor_coordinate(60, 9);
+    printf("%s", Scores);
+	//콤보
+	char Combos[20];
+	sprintf(Combos, "%d COMBO", combo_a);
+    cursor_coordinate(60, 11);
+    printf("%s", Combos);
 }
