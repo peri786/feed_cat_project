@@ -26,27 +26,20 @@ void initiolize() {
 
 	cci.dwSize = 1;
 	cci.bVisible = FALSE;
-	SetConsoleCursorInfo(g_hScreen[0], &cci);
-	SetConsoleCursorInfo(g_hScreen[1], &cci);
+	SetConsoleCursorInfo(screen[0], &cci);
+	SetConsoleCursorInfo(screen[1], &cci);
 }
 
 // 활성화된 버퍼와 비활성화된 버퍼의 상태를 바꿈
 void ScreenFlipping() {
-	SetConsoleActiveScreenBuffer(g_hScreen[g_nScreenIndex]);
-	g_nScreenIndex = !g_nScreenIndex;
-}
-
-// 버퍼 지우기
-void ScreenClear() {
-	COORD Coor = { 0, 0 };
-	DWORD dw;
-	FillConsoleOutputCharacter(g_hScreen[g_nScreenIndex], ' ', 80 * 25, Coor, &dw);
+	SetConsoleActiveScreenBuffer(screen[screen_index]);
+	screen_index = !screen_index;
 }
 
 // 생성한 두개의 버퍼를  모두 해제
 void ScreenRelease() {
-	CloseHandle(g_hScreen[0]);
-	CloseHandle(g_hScreen[1]);
+	CloseHandle(screen[0]);
+	CloseHandle(screen[1]);
 }
 
 // 커서 이동

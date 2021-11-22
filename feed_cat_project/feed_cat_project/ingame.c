@@ -1,16 +1,14 @@
 #include "ingame.h"
 
-// 시간 변수
-clock_t current_time;
-
 // 그 외 변수
 int score_a = 0;
 int combo_a = 0;
+extern int cu;
 
 // 맵1의 리듬게임 시작
 void map_1_ingame() {
 
-    clock_t Curtime = clock();
+    clock_t cur_time = clock();
 
     system("cls");
     map_display();
@@ -23,7 +21,16 @@ void map_1_ingame() {
     Sleep(2000);
 
     PlaySound(TEXT("map_1.wav"), NULL, SND_ASYNC | SND_LOOP);
+    
+    if (run_time > 3100) {
+        if (cur_time - ControlT.prev_t > ControlT.move_t) {
+            ControlT.prev_t = cur_time;
+            cu++;
+        }
+        note_draw(cu);
+    }
 
+    music_note();
 }
 
 // 노트가 떨어지는 공간을 그림
@@ -44,9 +51,9 @@ void map_display() {
 
 void score() {
 
-	// 시간
+	// 진행 시간
 	char Time[20];
-	sprintf(Time, "TIME : %d.%dsec", current_time / 1000, current_time % 1000);
+	sprintf(Time, "TIME : %d.%dsec", run_time / 1000, run_time % 1000);
     cursor_coordinate(60, 7);
     printf("%s", Time);
 	// 점수
