@@ -5,8 +5,10 @@
 
 // 함수 선언
 void map_display();        // 노트가 떨어지는 공간을 그림
-void map_1_ingame();
+void ingame_draw();
+void ReadyMap1();
 void score();         // 맵 옆에 점수나 콤보 표시
+void run_ingame();
 
 // 시간 변수
 clock_t run_time;
@@ -18,3 +20,9 @@ typedef struct  CONTROL {
     int sync; // 싱크 조율
 }CONTROL;
 CONTROL ControlT;
+
+// 게임 상태
+typedef enum _CONTROLGAME {
+    READY, RUNNING, PAUSE, RESULT
+}CONTROLGAME;
+CONTROLGAME ConGAME;

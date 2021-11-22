@@ -40,17 +40,23 @@ void music_note() {
 	Note[70] = DO_key;
 	Note[80] = LE_key;
 	Note[90] = UP_key;
-
-
 }
 
+// 노트 초기화
 void init_note() {
 	ControlT.move_t = 52;
 	ControlT.prev_t = 0;
 	ControlT.sync = 0;
+	ConGAME = READY;
 	music_note();
 	for (int i = 0; i < NOTES; i++) {
 		Note[i] = " ";
 	}
 	run_time = 0;
+
+	InputN.note_LE = 2;
+	InputN.note_UP = 11;
+	InputN.note_DO = 17;
+	InputN.note_RI = 24;
+	ConGAME = READY;
 }
