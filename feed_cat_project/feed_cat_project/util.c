@@ -42,6 +42,14 @@ void ScreenRelease() {
 	CloseHandle(screen[1]);
 }
 
+void ScreenClear()
+{
+	COORD Coor = { 0, 0 };
+	DWORD dw;
+	FillConsoleOutputCharacter(screen[screen_index], ' ', 80 * 25, Coor, &dw);
+}
+
+
 // 커서 이동
 void cursor_coordinate(int x, int y) {
 

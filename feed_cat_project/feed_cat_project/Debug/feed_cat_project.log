@@ -1,2 +1,7 @@
-﻿  main.c
-C:\c work\feed_cat_project\feed_cat_project\feed_cat_project\main.c(1,10): fatal error C1083: include ファイルを開けません。'SDL.h':No such file or directory
+﻿  feed_cat_game.c
+  ingame.c
+  main.c
+  note.c
+  util.c
+  コードを生成中...
+  feed_cat_project.vcxproj -> C:\Users\SEOKWON\c_work\feed_cat_project\feed_cat_project\Debug\feed_cat_project.exe

@@ -1,4 +1,3 @@
-#include "main.h"
 #include "feed_cat_game.h"
 #include "util.h"
 
@@ -9,33 +8,32 @@ int main() {
 	init_note();
 
 	while (true) {
+		int input_key;
 		title_music();
 		title();
-		char game_return;
 		int menu_return = menu();
 		if (menu_return == 0) {
 			select_map();
 			map_1();
-			if (select_map_cursor() == 0) { // START를 누르면 인게임으로 이동
-
+			int game_return = select_map_cursor();
+			if (game_return == 0) { // START를 누르면 인게임으로 이동
 				while (true) {
-
+					ScreenRelease();
 					if (_kbhit()) {
-						game_return = _getch();
-						if (game_return == 13) {
-							ConGAME = RUNNING;
+						input_key = _getch();
+						if (input_key == 13) {
+							ConGAME = RUNNING; // 엔터 입력 시 running시작 음악 호출
 							PlaySound(TEXT("map_1.wav"), NULL, SND_ASYNC | SND_LOOP);
 						}
-						else if (game_return == 'p') {
+						if (input_key == 'p') {
 							ConGAME = PAUSE;
 						}
 					}
-
 					run_ingame();
 					ingame_draw();
 				}
-				ScreenRelease();
 			}
+			ScreenRelease();
 		}
 		else if (menu_return == 2) {
 			char_status();
