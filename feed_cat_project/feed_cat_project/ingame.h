@@ -10,6 +10,10 @@ void ready_game();
 void ready_gameA();
 void score();         // ¸Ê ¿·¿¡ Á¡¼ö³ª ÄÞº¸ Ç¥½Ã
 void run_ingame();
+void judge_LE();
+void judge_UP();
+void judge_DO();
+void judge_RI();
 
 // ½Ã°£ º¯¼ö
 clock_t run_time;

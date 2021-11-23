@@ -3,7 +3,12 @@
 // 그 외 변수
 int score_a = 0;
 int combo_a = 0;
+char strScore[20] = "  ";
 extern int cu;
+extern char* checked;
+extern char* checked_a;
+extern char* checked_b;
+
 // 진행 시간
 char Time[20];
 // 점수
@@ -83,15 +88,22 @@ void score() {
 	sprintf(Time, "TIME : %d.%dsec", run_time / 1000, run_time % 1000);
     cursor_coordinate(60, 7);
     printf("%s", Time);
+
 	// 점수
 	sprintf(Scores, "SCORE : %d", score_a);
     cursor_coordinate(60, 9);
     printf("%s", Scores);
+
+    // 판정 이펙트
+    cursor_coordinate(75, 10);
+    printf("%s", strScore);
+
 	//콤보
 	sprintf(Combos, "%d COMBO", combo_a);
     cursor_coordinate(60, 11);
     printf("%s", Combos);
 
+    // 가이드
     cursor_coordinate(60, 15);
     printf("STOP : press 'P'");
 
@@ -129,3 +141,90 @@ void run_ingame() {
 }
 
 // 판정 및 점수 추가
+void judge_LE() {
+
+    if (checked == "  ■■■■■") {
+        score_a += 700;
+        combo_a++;
+        sprintf(strScore, "%s", "★PERFECT★");
+    }
+    else if (checked_a == "  ■■■■■") {
+        score_a += 400;
+        combo_a++;
+        sprintf(strScore, "%s", "★GREAT★");
+    }
+    else if (checked_b == "  ■■■■■") {
+        score_a += 100;
+        combo_a++;
+        sprintf(strScore, "%s", "★GOOD★");
+    }
+    else {
+        combo_a = 0;
+    }
+}
+
+void judge_UP() {
+
+    if (checked == "             ■■■■■") {
+        score_a += 700;
+        combo_a++;
+        sprintf(strScore, "%s", "★PERFECT★");
+    }
+    else if (checked_a == "             ■■■■■") {
+        score_a += 400;
+        combo_a++;
+        sprintf(strScore, "%s", "★GREAT★");
+    }
+    else if (checked_b == "             ■■■■■") {
+        score_a += 100;
+        combo_a++;
+        sprintf(strScore, "%s", "★GOOD★");
+    }
+    else {
+        combo_a = 0;
+    }
+}
+
+void judge_DO() {
+
+    if (checked == "                     ■■■■■") {
+        score_a += 700;
+        combo_a++;
+        sprintf(strScore, "%s", "★PERFECT★");
+    }
+    else if (checked_a == "                     ■■■■■") {
+        score_a += 400;
+        combo_a++;
+        sprintf(strScore, "%s", "★GREAT★");
+    }
+    else if (checked_b == "                     ■■■■■") {
+        score_a += 100;
+        combo_a++;
+        sprintf(strScore, "%s", "★GOOD★");
+    }
+    else {
+        combo_a = 0;
+    }
+}
+
+void judge_RI() {
+
+    if (checked == "                            ■■■■■ ") {
+        score_a += 700;
+        combo_a++;
+        sprintf(strScore, "%s", "★PERFECT★");
+    }
+    else if (checked_a == "                            ■■■■■ ") {
+        score_a += 400;
+        combo_a++;
+        sprintf(strScore, "%s", "★GREAT★");
+    }
+    else if (checked_b == "                            ■■■■■ ") {
+        score_a += 100;
+        combo_a++;
+        sprintf(strScore, "%s", "★GOOD★");
+    }
+    else {
+        combo_a = 0;
+    }
+}

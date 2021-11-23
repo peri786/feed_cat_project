@@ -14,9 +14,6 @@ char* LE_key = "  ■■■■■";
 char* UP_key = "             ■■■■■";
 char* DO_key = "                     ■■■■■";
 char* RI_key = "                            ■■■■■ ";
-char* LE_RI_key = "  ■■■■■                     ■■■■■ ";
-char* UP_RI_key = "             ■■■■■          ■■■■■ ";
-char* LE_DO_key = "  ■■■■■              ■■■■■";
 char* none_key = "                         ";
 
 // 노트를 출력
@@ -46,26 +43,6 @@ void music_note() {
 	Note[100 + ControlT.sync] = RI_key;
 	Note[110 + ControlT.sync] = DO_key;
 	Note[120 + ControlT.sync] = LE_key;
-	Note[130 + ControlT.sync] = LE_RI_key;
-	Note[140 + ControlT.sync] = LE_RI_key;
-	Note[150 + ControlT.sync] = LE_RI_key;
-	Note[160 + ControlT.sync] = LE_key;
-	Note[170 + ControlT.sync] = LE_RI_key;
-	Note[180 + ControlT.sync] = RI_key;
-	Note[190 + ControlT.sync] = DO_key;
-	Note[200 + ControlT.sync] = LE_key;
-	Note[210 + ControlT.sync] = UP_RI_key;
-	Note[220 + ControlT.sync] = UP_RI_key;
-	Note[230 + ControlT.sync] = UP_RI_key;
-	Note[240 + ControlT.sync] = UP_RI_key;
-	Note[250 + ControlT.sync] = UP_RI_key;
-	Note[260 + ControlT.sync] = LE_key;
-	Note[270 + ControlT.sync] = DO_key;
-	Note[280 + ControlT.sync] = LE_DO_key;
-	Note[290 + ControlT.sync] = UP_key;
-	Note[300 + ControlT.sync] = UP_key;
-	Note[310 + ControlT.sync] = UP_key;
-	Note[320 + ControlT.sync] = UP_key;
 }
 
 // 노트 초기화
