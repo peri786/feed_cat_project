@@ -6,3 +6,4 @@ void cursor_coordinate(int x, int y);
 void ScreenFlipping();
 void ScreenRelease();
 void ScreenClear();
+void textcolor(int color_number);

@@ -9,11 +9,13 @@ void ingame_draw();
 void ready_game();
 void ready_gameA();
 void score();         // 맵 옆에 점수나 콤보 표시
+void record(int score_a);
 void run_ingame();
 void judge_LE();
 void judge_UP();
 void judge_DO();
 void judge_RI();
+void map_1_music();
 
 // 시간 변수
 clock_t run_time;
@@ -28,6 +30,6 @@ CONTROL ControlT;
 
 // 게임 상태
 typedef enum _CONTROLGAME {
-    READY, RUNNING, PAUSE, RESULT
+    SET, RUNNING, STOP, RESULT
 }CONTROLGAME;
 CONTROLGAME ConGAME;

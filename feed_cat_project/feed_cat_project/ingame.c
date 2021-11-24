@@ -3,7 +3,7 @@
 // 그 외 변수
 int score_a = 0;
 int combo_a = 0;
-char strScore[20] = "  ";
+char judge_score[20] = "  ";
 extern int cu;
 extern char* checked;
 extern char* checked_a;
@@ -24,19 +24,20 @@ void ingame_draw() {
     clock_t cur_time = clock();
     ScreenClear();
     system("cls");
-    
+
+    textcolor(14);
     map_display();
     score();
     
     switch (ConGAME) {
-    case READY:
+    case SET:
         prev_tA = cur_time;
         ready_game();
         if (cur_time % 1000 > 500) {
             ready_gameA();
         }
         break;
-    case PAUSE:
+    case STOP:
         return;
     case RUNNING:
         if (run_time > 3100) {
@@ -50,7 +51,10 @@ void ingame_draw() {
         break;
 
     case RESULT:
-        printf("%s", Scores);
+        sndPlaySound(NULL, SND_ASYNC);
+        cursor_coordinate(20, 15);
+        setlocale(LC_ALL, "Korean");
+        wprintf(L"GAME SET\n\n\t'Q'를 누르면 타이틀로 돌아갑니다.");
         break;
     }
 
@@ -63,7 +67,7 @@ void ready_game() {
 }
 
 void ready_gameA() {
-    cursor_coordinate(10, 15);
+    cursor_coordinate(15, 15);
     printf("Press Enter to Start");
 }
 
@@ -95,8 +99,8 @@ void score() {
     printf("%s", Scores);
 
     // 판정 이펙트
-    cursor_coordinate(75, 10);
-    printf("%s", strScore);
+    cursor_coordinate(80, 25);
+    printf("%s", judge_score);
 
 	//콤보
 	sprintf(Combos, "%d COMBO", combo_a);
@@ -122,20 +126,20 @@ void run_ingame() {
     ControlT.sync = 1;
 
     switch (ConGAME) {
-    case READY:
+    case SET:
         prev_t = cur_time;
         break;
     case RUNNING:
         run_time = clock() - prev_t;
-        if (run_time > 30000) {
+        if (run_time > 70000) {
             ConGAME = RESULT;
         }
         music_note();
         break;
-    case PAUSE:
+    case STOP:
         break;
     case RESULT:
-        printf("%s", Scores);
+        sndPlaySound(NULL, SND_ASYNC);
         break;
     }
 }
@@ -146,17 +150,17 @@ void judge_LE() {
     if (checked == "  ■■■■■") {
         score_a += 700;
         combo_a++;
-        sprintf(strScore, "%s", "★PERFECT★");
+        sprintf(judge_score, "%s", "PERFECT!!!");
     }
     else if (checked_a == "  ■■■■■") {
         score_a += 400;
         combo_a++;
-        sprintf(strScore, "%s", "★GREAT★");
+        sprintf(judge_score, "%s", "GREAT!!");
     }
     else if (checked_b == "  ■■■■■") {
         score_a += 100;
         combo_a++;
-        sprintf(strScore, "%s", "★GOOD★");
+        sprintf(judge_score, "%s", "GOOD!");
     }
     else {
         combo_a = 0;
@@ -168,17 +172,17 @@ void judge_UP() {
     if (checked == "             ■■■■■") {
         score_a += 700;
         combo_a++;
-        sprintf(strScore, "%s", "★PERFECT★");
+        sprintf(judge_score, "%s", "PERFECT!!!");
     }
     else if (checked_a == "             ■■■■■") {
         score_a += 400;
         combo_a++;
-        sprintf(strScore, "%s", "★GREAT★");
+        sprintf(judge_score, "%s", "GREAT!!");
     }
     else if (checked_b == "             ■■■■■") {
         score_a += 100;
         combo_a++;
-        sprintf(strScore, "%s", "★GOOD★");
+        sprintf(judge_score, "%s", "GOOD!");
     }
     else {
         combo_a = 0;
@@ -187,20 +191,20 @@ void judge_UP() {
 
 void judge_DO() {
 
-    if (checked == "                     ■■■■■") {
+    if (checked == "                       ■■■■■") {
         score_a += 700;
         combo_a++;
-        sprintf(strScore, "%s", "★PERFECT★");
+        sprintf(judge_score, "%s", "PERFECT!!!");
     }
-    else if (checked_a == "                     ■■■■■") {
+    else if (checked_a == "                       ■■■■■") {
         score_a += 400;
         combo_a++;
-        sprintf(strScore, "%s", "★GREAT★");
+        sprintf(judge_score, "%s", "GREAT!!");
     }
-    else if (checked_b == "                     ■■■■■") {
+    else if (checked_b == "                       ■■■■■") {
         score_a += 100;
         combo_a++;
-        sprintf(strScore, "%s", "★GOOD★");
+        sprintf(judge_score, "%s", "GOOD!");
     }
     else {
         combo_a = 0;
@@ -209,22 +213,26 @@ void judge_DO() {
 
 void judge_RI() {
 
-    if (checked == "                            ■■■■■ ") {
+    if (checked == "                                ■■■■■ ") {
         score_a += 700;
         combo_a++;
-        sprintf(strScore, "%s", "★PERFECT★");
+        sprintf(judge_score, "%s", "PERFECT!!!");
     }
-    else if (checked_a == "                            ■■■■■ ") {
+    else if (checked_a == "                                ■■■■■ ") {
         score_a += 400;
         combo_a++;
-        sprintf(strScore, "%s", "★GREAT★");
+        sprintf(judge_score, "%s", "GREAT!!");
     }
-    else if (checked_b == "                            ■■■■■ ") {
+    else if (checked_b == "                                ■■■■■ ") {
         score_a += 100;
         combo_a++;
-        sprintf(strScore, "%s", "★GOOD★");
+        sprintf(judge_score, "%s", "GOOD!");
     }
     else {
         combo_a = 0;
     }
+}
+
+void map_1_music() {
+    PlaySound(TEXT("map_1.wav"), NULL, SND_ASYNC | SND_LOOP);
 }

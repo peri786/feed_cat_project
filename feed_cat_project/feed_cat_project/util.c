@@ -49,7 +49,6 @@ void ScreenClear()
 	FillConsoleOutputCharacter(screen[screen_index], ' ', 80 * 25, Coor, &dw);
 }
 
-
 // 커서 이동
 void cursor_coordinate(int x, int y) {
 
@@ -58,4 +57,10 @@ void cursor_coordinate(int x, int y) {
 	pos.X = x;
 	pos.Y = y;
 	SetConsoleCursorPosition(consoleHandler, pos);
+}
+
+// 글자 색 변경
+void textcolor(int color_number) {
+
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color_number);
 }

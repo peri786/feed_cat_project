@@ -9,6 +9,7 @@ int main() {
 
 	while (true) {
 		int input_key;
+		textcolor(7);
 		title_music();
 		title();
 		int menu_return = menu();
@@ -21,12 +22,31 @@ int main() {
 					ScreenRelease();
 					if (_kbhit()) {
 						input_key = _getch();
-						if (input_key == 13) {
+						if (input_key == ENTER) {
 							ConGAME = RUNNING; // 엔터 입력 시 running시작 음악 호출
-							PlaySound(TEXT("map_1.wav"), NULL, SND_ASYNC | SND_LOOP);
+							map_1_music();
 						}
 						if (input_key == 'p') {
-							ConGAME = PAUSE;
+							ConGAME = STOP;
+						}
+						switch (input_key) {
+						case LEFT:
+							judge_LE();
+							break;
+						case UP:
+							judge_UP();
+							break;
+						case DOWN:
+							judge_DO();
+							break;
+						case RIGHT:
+							judge_RI();
+							break;
+						}
+						if (ConGAME == RESULT) {
+							if (input_key == 'q') {
+								break;
+							}
 						}
 					}
 					run_ingame();
