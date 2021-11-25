@@ -45,7 +45,7 @@ int main() {
 						}
 						if (ConGAME == RESULT) {
 							if (input_key == 'q') {
-								break;
+								return 0;
 							}
 						}
 					}

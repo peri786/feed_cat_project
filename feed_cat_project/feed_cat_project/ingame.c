@@ -54,7 +54,7 @@ void ingame_draw() {
         sndPlaySound(NULL, SND_ASYNC);
         cursor_coordinate(20, 15);
         setlocale(LC_ALL, "Korean");
-        wprintf(L"GAME SET\n\n\t'Q'를 누르면 타이틀로 돌아갑니다.");
+        wprintf(L"GAME SET\n\n\t'Q'를 게임이 종료됩니다.");
         break;
     }
 
