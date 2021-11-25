@@ -333,6 +333,13 @@ void music_note() {
 	Note[750 + ControlT.sync] = LE_key;
 	Note[752 + ControlT.sync] = LE_key;
 	Note[753 + ControlT.sync] = DO_key;
+	Note[755 + ControlT.sync] = LE_key;
+	Note[760 + ControlT.sync] = LE_key;
+	Note[763 + ControlT.sync] = DO_key;
+	Note[767 + ControlT.sync] = LE_key;
+	Note[770 + ControlT.sync] = UP_key;
+	Note[775 + ControlT.sync] = LE_key;
+	Note[780 + ControlT.sync] = LE_key;
 }
 
 // 노트 초기화
